@@ -1,5 +1,6 @@
 *.txt
 node_modules
+*.jpg
 # Compiled source #
 ###################
 *.com
