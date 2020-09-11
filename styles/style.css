@@ -234,3 +234,97 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+header .appTitle {
+  font-family: "Raleway", sans-serif;
+  color: blue;
+  font-size: 3rem;
+}
+
+.wrapper {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+header,
+main {
+  border: 1px solid red;
+}
+
+.titleDetails {
+  padding: 100px 0;
+}
+
+.invoiceNum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.fieldTitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+}
+
+.invoiceNumInput {
+  font-size: 1.8rem;
+}
+
+.itemTableDescription {
+  width: 100%;
+  background-color: burlywood;
+}
+
+.itemTableDescription ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.itemTableDescription ul li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.itemTableDescription ul .itemDescription {
+  width: 70%;
+}
+
+.itemTableDescription ul .dollarAmount {
+  width: 30%;
+}
+
+.totalDetails {
+  padding: 50px 0;
+}
+
+.subTotalInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.subTotalInput .subTotal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4rem;
+}
+
+.subTotalInput input {
+  font-size: 1.4rem;
+}

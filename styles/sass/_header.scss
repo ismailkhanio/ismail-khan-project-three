@@ -1,0 +1,10 @@
+@import 'fonts';
+@import 'colors';
+
+header {
+	.appTitle {
+		font-family: $h1HeaderFont;
+		color: blue;
+		font-size: 3rem;
+	}
+}

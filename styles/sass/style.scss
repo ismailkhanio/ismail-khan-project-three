@@ -1,8 +1,88 @@
-// inside style.scss
+// @imports inside style.scss
 @import 'setup';
+@import 'header';
 @import 'footer';
 @import 'fonts';
 @import 'colors';
 @import 'mixins';
 
-// main header css
+// GENERAL
+.wrapper {
+	max-width: 1280px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+body {
+	font-size: 62.5%;
+}
+
+header, 
+main {
+	border: 1px solid red;
+}
+
+// MAIN CSS
+// title details section
+.titleDetails {
+	padding: 100px 0;
+}
+
+.invoiceNum {
+	display: flex;
+	justify-content: right;
+}
+
+.fieldTitle {
+	font-family: $baseFont;
+	font-size: 1.8rem;
+}
+
+.invoiceNumInput {
+	font-size: 1.8rem;
+}
+
+// line items section
+.itemTableDescription {
+	width: 100%;
+	background-color: burlywood;
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		
+		li {
+			font-family: $baseFont;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			// list-style-type: none;
+		}
+
+		.itemDescription {
+			width: 70%;
+		}
+
+		.dollarAmount {
+			width: 30%;
+		}
+	}
+}
+
+
+// total section
+.totalDetails {
+	padding: 50px 0;
+}
+
+.subTotalInput {
+	display: flex;
+	justify-content: right;
+
+	.subTotal {
+		font-family: $baseFont;
+		font-size: 1.4rem;
+	}
+	input {
+		font-size: 1.4rem;
+	}
+}

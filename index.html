@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ismail Khan Project 03</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- css -->
+	<link rel="stylesheet" href="./styles/style.css">
+	<!-- google fonts -->
+	 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;600;900&display=swap" rel="stylesheet">
+	<title>EZ Invoice Generator</title>
 </head>
 <body>
-  <h1>this h1 does h1 things</h1>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio itaque saepe a accusantium necessitatibus! Dignissimos, error? Officiis suscipit ea incidunt.</p>
+
+	<header class="wrapper">
+		<div class="wrapper">
+			<h1 class="appTitle">EZ Invoice Generator</h1>
+		</div>
+		
+	</header>
+	<main class="wrapper">
+		<!-- Details of invoice -->
+		<section class="titleDetails">
+			<div class="invoiceNum">
+				<p class="fieldTitle">Invoice #:</p>
+				<input class="invoiceNumInput"type="text" maxlength="11">
+			</div>
+		</section>
+		
+		<!-- Line items table -->
+		<section class="lineItemTable">
+			<div class="itemTableDescription">
+				<ul>
+					<li class="itemDescription">Item Description</li>
+					<li class="dollarAmount">Dollar Amount</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- total section -->
+		<section class="totalDetails">
+			<div class="subTotalInput">
+				<p class="subTotal">Subtotal:  $</p>
+				<input type="number" class="subtotalNum" maxlength="11">
+			</div>
+		</section>
+	</main>
+
+	<footer>
+
+	</footer>
 </body>
 </html>
