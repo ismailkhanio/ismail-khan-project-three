@@ -241,8 +241,20 @@ header .appTitle {
   font-size: 3rem;
 }
 
+footer {
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+}
+
 .wrapper {
-  max-width: 1280px;
+  max-width: 1080px;
   width: 90%;
   margin: 0 auto;
 }
@@ -253,14 +265,40 @@ body {
 
 header,
 main {
-  border: 1px solid red;
+  border: 1px solid darkblue;
 }
 
-.titleDetails {
-  padding: 100px 0;
+.invoiceDetails {
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.invoiceNum {
+.invoiceDetails .leftCol {
+  width: 60%;
+  margin-left: 20px;
+}
+
+.invoiceDetails .rightCol {
+  width: 40%;
+  margin-right: 20px;
+}
+
+.invoiceDetails .invoiceIdentifiers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+}
+
+.invoiceDetails .flexContainerDetail {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,21 +307,58 @@ main {
           justify-content: right;
 }
 
-.fieldTitle {
+.invoiceDetails .flexContainerDetail:nth-of-type(2) {
+  margin-top: 10px;
+}
+
+.invoiceDetails .fieldInput {
+  width: 150px;
+}
+
+.invoiceDetails .fieldHeading {
+  margin-right: 10px;
+}
+
+.invoiceDetails .fieldText {
+  height: 150px;
+  width: 300px;
+  margin: 7px 0;
+  resize: none;
+}
+
+.fieldHeading,
+.fieldInput,
+.fieldText {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.1rem;
 }
 
-.invoiceNumInput {
-  font-size: 1.8rem;
+.billingFrom,
+.billingTo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  width: 40%;
 }
 
-.itemTableDescription {
+.invoiceTable {
+  padding: 50px 0;
+  border-top: 5px solid cornflowerblue;
+}
+
+.itemsTableHeader {
   width: 100%;
-  background-color: burlywood;
+  background-color: cadetblue;
 }
 
-.itemTableDescription ul {
+.itemsTableHeader ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,40 +366,116 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0;
 }
 
-.itemTableDescription ul li {
+.itemsTableHeader ul li {
   font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
+  list-style-type: none;
+  padding-left: none;
+  text-align: center;
 }
 
-.itemTableDescription ul .itemDescription {
-  width: 70%;
+.itemsTableHeader ul .itemDescription {
+  width: 65%;
 }
 
-.itemTableDescription ul .dollarAmount {
+.itemsTableHeader ul .dollarAmount {
   width: 30%;
+}
+
+.dynamicItemRow {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.defaultRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.defaultRow .inputRow {
+  height: 35px;
+}
+
+.defaultRow .itemDescInput {
+  width: 65%;
+}
+
+.defaultRow .itemNumInput {
+  width: 30%;
+}
+
+.newLineBtn {
+  background: #3498db;
+  border-radius: 10px;
+  color: black;
+  font-size: 1rem;
+  padding: 10px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.newLineBtn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
 }
 
 .totalDetails {
   padding: 50px 0;
-}
-
-.subTotalInput {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  border-top: 5px solid cornflowerblue;
 }
 
-.subTotalInput .subTotal {
+.flexContainerTotals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px dashed black;
+  width: 30%;
+}
+
+.flexContainerTotals .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 35px;
+}
+
+.totalStyle {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.4rem;
-}
-
-.subTotalInput input {
   font-size: 1.4rem;
 }

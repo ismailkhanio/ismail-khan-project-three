@@ -3,50 +3,102 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EZ Invoice Generator</title>
 	<!-- css -->
 	<link rel="stylesheet" href="./styles/style.css">
 	<!-- google fonts -->
 	 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;600;900&display=swap" rel="stylesheet">
-	<title>EZ Invoice Generator</title>
+	 <!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 <body>
-
+	<!-- header -->
 	<header class="wrapper">
-		<div class="wrapper">
-			<h1 class="appTitle">EZ Invoice Generator</h1>
-		</div>
-		
+		<h1 class="appTitle">EZ Invoice Generator</h1>
 	</header>
+
 	<main class="wrapper">
-		<!-- Details of invoice -->
-		<section class="titleDetails">
-			<div class="invoiceNum">
-				<p class="fieldTitle">Invoice #:</p>
-				<input class="invoiceNumInput"type="text" maxlength="11">
+		<!-- Invoice Details -->
+		<section class="invoiceDetails">
+			<div class="leftCol">
+				<div class="billingAddress">
+					<div class="billingFrom">
+						<label class="fieldHeading" for="BillingFrom">Billing From:</label>
+						<textarea class="fieldText" name="billingFrom" id="" cols="300" rows="5"></textarea>
+					</div>
+	
+					<div class="billingTo">
+						<label class="fieldHeading" for="BillingTo">Billing To:</label>
+						<textarea class="fieldText" name="billingTo" id="" cols="300" rows="5"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="rightCol">
+				<div class="invoiceIdentifiers">
+					<div class="flexContainerDetail">
+						<p class="fieldHeading">Invoice Number </p>
+						<input class="fieldInput" type="text" maxlength="11">
+					</div>
+					<div class="flexContainerDetail">
+						<p class="fieldHeading">Invoice Date </p>
+						<input type="date" class="fieldInput">
+					</div>
+				</div>
 			</div>
 		</section>
 		
-		<!-- Line items table -->
-		<section class="lineItemTable">
-			<div class="itemTableDescription">
+		<!-- Line Items Table -->
+		<section class="invoiceTable">
+			<!-- table header -->
+			<div class="itemsTableHeader">
 				<ul>
 					<li class="itemDescription">Item Description</li>
-					<li class="dollarAmount">Dollar Amount</li>
+					<li class="dollarAmount">Amount ($)</li>
 				</ul>
 			</div>
+
+			<!-- dynamic table rows -->
+			<div class="dynamicItemRow">
+				<div class="defaultRow">
+					<!-- item description -->
+					<input type="text" class="fieldInput inputRow itemDescInput" maxlength="30">
+					<!-- $ amount -->
+					<input type="number" class="fieldInput inputRow itemNumInput" name="" id="" maxlength="6">
+				</div>
+
+				<!-- this is where the javascript goes -->
+				
+			</div>
+
+			<!-- add new line button -->
+				<!-- on click create a new line item row -->
+			<button class="newLineBtn">+ Add New Line</button>
+			
 		</section>
 
 		<!-- total section -->
 		<section class="totalDetails">
-			<div class="subTotalInput">
-				<p class="subTotal">Subtotal:  $</p>
-				<input type="number" class="subtotalNum" maxlength="11">
+			<div class="flexContainerTotals">
+				<div class="col">
+					<p class="totalStyle subtotalHeading">Subtotal:</p>
+					<p class="totalStyle subtotalVal">$ 0.00</p>
+					<!-- this value will aggregate all the dollar amounts in .dynamicTableRow -->
+				</div>
+				<div class="col">
+					<p class="totalStyle totalHeading">Total:</p>
+					<p class="totalStyle totalVal">$ 0.00</p>
+				</div>
 			</div>
+
 		</section>
 	</main>
 
-	<footer>
-
+	<footer class="wrapper">
+		<p>Created with ☕ by <a href="https://github.com/ismailkhanio">Ismail Khan</a></p>
+		<p>© Copyright 2020</p>
+		<p>Made @ Juno College</p>
 	</footer>
+
+	<script src="app.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 
 // GENERAL
 .wrapper {
-	max-width: 1280px;
+	max-width: 1080px;
 	width: 90%;
 	margin: 0 auto;
 }
@@ -19,47 +19,104 @@ body {
 
 header, 
 main {
-	border: 1px solid red;
+	border: 1px solid darkblue;
 }
 
 // MAIN CSS
-// title details section
-.titleDetails {
-	padding: 100px 0;
-}
 
-.invoiceNum {
+// SECTION: INVOICE DETAILS
+.invoiceDetails {
+	padding: 50px 0;
 	display: flex;
-	justify-content: right;
+
+	.leftCol {
+		width: 60%;
+		margin-left: 20px;
+	}
+
+	.rightCol {
+		width: 40%;
+		margin-right: 20px;
+	}
+
+	.invoiceIdentifiers {
+		display: flex;
+		flex-direction: column;
+		align-items: right;
+	}
+	
+	.flexContainerDetail {
+		display: flex;
+		justify-content: right;
+
+		&:nth-of-type(2) {
+			margin-top: 10px;
+		}
+	}
+	
+	.fieldInput {
+		width: 150px;
+	}
+	
+	.fieldHeading {
+		margin-right: 10px;
+	}
+
+	.fieldText {
+		height: 150px;
+		width: 300px;
+		margin: 7px 0;
+		resize: none;
+	}
 }
 
-.fieldTitle {
+.fieldHeading,
+.fieldInput,
+.fieldText {
 	font-family: $baseFont;
-	font-size: 1.8rem;
+	font-size: 1.1rem;
 }
 
-.invoiceNumInput {
-	font-size: 1.8rem;
+.billingFrom,
+.billingTo {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	width: 40%;
 }
 
-// line items section
-.itemTableDescription {
+
+// SECTION: LINE ITEMS
+.invoiceTable {
+	padding: 50px 0;
+	border-top: 5px solid cornflowerblue;
+
+}
+
+// table header
+.itemsTableHeader {
 	width: 100%;
-	background-color: burlywood;
+	background-color: cadetblue;
 
 	ul {
 		display: flex;
 		flex-direction: row;
+		justify-content: center;
+		padding-left: 0;
+		
 		
 		li {
 			font-family: $baseFont;
 			font-size: 1.5rem;
 			text-transform: uppercase;
-			// list-style-type: none;
+			list-style-type: none;
+			// border: 1px solid black;
+			padding-left: none;
+			text-align: center;
 		}
 
 		.itemDescription {
-			width: 70%;
+			width: 65%;
 		}
 
 		.dollarAmount {
@@ -68,21 +125,73 @@ main {
 	}
 }
 
+// dynamic table
+.dynamicItemRow {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+// default table row
+.defaultRow {
+	display: flex;
+	justify-content: space-around;
+
+	.inputRow {
+		height: 35px;
+	}
+
+	.itemDescInput {
+		width: 65%;
+		// margin-right: 80px;
+	}
+	.itemNumInput {
+		width: 30%;
+	}
+}
+
+// add new line button
+.newLineBtn {
+	background: #3498db;
+	border-radius: 10px;
+	color: black;
+	font-size: 1rem;
+	padding: 10px;
+	text-decoration: none;
+	margin-top: 20px;
+
+	&:hover {
+		background: #3cb0fd;
+		text-decoration: none;
+	}
+}
+
 
 // total section
 .totalDetails {
 	padding: 50px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	align-items: left;
+
+	border-top: 5px solid cornflowerblue;
 }
 
-.subTotalInput {
+.flexContainerTotals {
 	display: flex;
-	justify-content: right;
+	flex-direction: column;
+	border: 1px dashed black; //remove this later
+	width: 30%;
 
-	.subTotal {
-		font-family: $baseFont;
-		font-size: 1.4rem;
+	.col {
+		display: flex;
+		justify-content: space-between;
+		padding-right: 35px;
 	}
-	input {
-		font-size: 1.4rem;
-	}
+}
+
+.totalStyle {
+	font-family: $baseFont;
+	font-size: 1.4rem;
 }
