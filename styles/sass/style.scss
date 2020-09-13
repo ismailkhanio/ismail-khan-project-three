@@ -15,11 +15,13 @@
 
 body {
 	font-size: 62.5%;
+	background-color: $honeyDew;
 }
 
 header, 
 main {
-	border: 1px solid darkblue;
+	border-left: 1px solid $celadonBlue;
+	border-right: 1px solid $celadonBlue;
 }
 
 // MAIN CSS
@@ -43,15 +45,13 @@ main {
 		display: flex;
 		flex-direction: column;
 		align-items: right;
+		margin-top: 30px;
 	}
 	
 	.flexContainerDetail {
 		display: flex;
 		justify-content: right;
-
-		&:nth-of-type(2) {
-			margin-top: 10px;
-		}
+		margin-bottom: 10px;
 	}
 	
 	.fieldInput {
@@ -67,6 +67,7 @@ main {
 		width: 300px;
 		margin: 7px 0;
 		resize: none;
+		overflow: none;
 	}
 }
 
@@ -75,6 +76,9 @@ main {
 .fieldText {
 	font-family: $baseFont;
 	font-size: 1.1rem;
+
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
 }
 
 .billingFrom,
@@ -88,15 +92,14 @@ main {
 
 // SECTION: LINE ITEMS
 .invoiceTable {
-	padding: 50px 0;
-	border-top: 5px solid cornflowerblue;
-
+	padding-bottom: 50px;
+	border-top: 2px solid $celadonBlue;
+	border-bottom: 2px solid $celadonBlue;
 }
 
 // table header
 .itemsTableHeader {
 	width: 100%;
-	background-color: cadetblue;
 
 	ul {
 		display: flex;
@@ -107,10 +110,8 @@ main {
 		
 		li {
 			font-family: $baseFont;
-			font-size: 1.5rem;
-			text-transform: uppercase;
+			font-size: 1.3rem;
 			list-style-type: none;
-			// border: 1px solid black;
 			padding-left: none;
 			text-align: center;
 		}
@@ -133,9 +134,10 @@ main {
 }
 
 // default table row
-.defaultRow {
+.dynamicRow {
 	display: flex;
 	justify-content: space-around;
+	margin-bottom: 10px;
 
 	.inputRow {
 		height: 35px;
@@ -143,26 +145,41 @@ main {
 
 	.itemDescInput {
 		width: 65%;
-		// margin-right: 80px;
 	}
-	.itemNumInput {
+	.amountVal {
 		width: 30%;
 	}
 }
 
 // add new line button
 .newLineBtn {
-	background: #3498db;
-	border-radius: 10px;
-	color: black;
-	font-size: 1rem;
-	padding: 10px;
+	display: inline-block;
+	padding: 6px 13px;
+	margin-left: 13px;
+	margin-top: 10px;
+	
+	cursor: pointer;
+	box-shadow: 0px 2px 0px 0px $honeyDew;
+	
+	border: 1px solid $celadonBlue;
+	border-radius: 7px;
 	text-decoration: none;
-	margin-top: 20px;
+	text-shadow: 0px -1px 0px $prussianBlue;
+	
+	background-color: $celadonBlue;
+	color: $honeyDew;
+	font-family: $baseFont;
+	font-size: 1rem;
+	font-weight: 700;
 
 	&:hover {
-		background: #3cb0fd;
-		text-decoration: none;
+		background: linear-gradient(to bottom, $celadonBlue 5%, #0a8cad 100%);
+		background-color: $celadonBlue;
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
 	}
 }
 
@@ -174,15 +191,13 @@ main {
 	flex-direction: row;
 	justify-content: right;
 	align-items: left;
-
-	border-top: 5px solid cornflowerblue;
 }
 
 .flexContainerTotals {
 	display: flex;
 	flex-direction: column;
 	border: 1px dashed black; //remove this later
-	width: 30%;
+	width: 45%;
 
 	.col {
 		display: flex;

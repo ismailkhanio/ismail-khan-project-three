@@ -4,7 +4,10 @@
 header {
 	.appTitle {
 		font-family: $h1HeaderFont;
-		color: blue;
-		font-size: 3rem;
+		color: $prussianBlue;
+		font-size: 2.3rem;
+		margin: 0 20px;
 	}
+
+	border-bottom: 1px solid $celadonBlue;
 }

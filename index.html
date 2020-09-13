@@ -7,8 +7,8 @@
 	<!-- css -->
 	<link rel="stylesheet" href="./styles/style.css">
 	<!-- google fonts -->
-	 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;600;900&display=swap" rel="stylesheet">
-	 <!-- jQuery -->
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,600&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -24,12 +24,12 @@
 				<div class="billingAddress">
 					<div class="billingFrom">
 						<label class="fieldHeading" for="BillingFrom">Billing From:</label>
-						<textarea class="fieldText" name="billingFrom" id="" cols="300" rows="5"></textarea>
+						<textarea class="fieldText" name="billingFrom" id="" maxlength="210"></textarea>
 					</div>
 	
 					<div class="billingTo">
 						<label class="fieldHeading" for="BillingTo">Billing To:</label>
-						<textarea class="fieldText" name="billingTo" id="" cols="300" rows="5"></textarea>
+						<textarea class="fieldText" name="billingTo" id="" maxlength="210"></textarea>
 					</div>
 				</div>
 			</div>
@@ -37,10 +37,14 @@
 				<div class="invoiceIdentifiers">
 					<div class="flexContainerDetail">
 						<p class="fieldHeading">Invoice Number </p>
-						<input class="fieldInput" type="text" maxlength="11">
+						<input class="fieldInput" type="number" min="01" maxlength="11">
 					</div>
 					<div class="flexContainerDetail">
 						<p class="fieldHeading">Invoice Date </p>
+						<input type="date" class="fieldInput">
+					</div>
+					<div class="flexContainerDetail">
+						<p class="fieldHeading">Due Date </p>
 						<input type="date" class="fieldInput">
 					</div>
 				</div>
@@ -56,23 +60,19 @@
 					<li class="dollarAmount">Amount ($)</li>
 				</ul>
 			</div>
-
 			<!-- dynamic table rows -->
 			<div class="dynamicItemRow">
-				<div class="defaultRow">
+				<div class="dynamicRow">
 					<!-- item description -->
 					<input type="text" class="fieldInput inputRow itemDescInput" maxlength="30">
 					<!-- $ amount -->
-					<input type="number" class="fieldInput inputRow itemNumInput" name="" id="" maxlength="6">
-				</div>
-
-				<!-- this is where the javascript goes -->
-				
+					<input type="number" class="fieldInput inputRow amountVal" name="amountValue" id="amountVal" min="0" maxlength="6">
+				</div>				
 			</div>
 
 			<!-- add new line button -->
 				<!-- on click create a new line item row -->
-			<button class="newLineBtn">+ Add New Line</button>
+			<a href="#" class="newLineBtn" id="addRow">+ New Item</a>
 			
 		</section>
 
@@ -80,25 +80,20 @@
 		<section class="totalDetails">
 			<div class="flexContainerTotals">
 				<div class="col">
-					<p class="totalStyle subtotalHeading">Subtotal:</p>
+					<p class="totalStyle subtotalHeading">Total</p>
 					<p class="totalStyle subtotalVal">$ 0.00</p>
 					<!-- this value will aggregate all the dollar amounts in .dynamicTableRow -->
 				</div>
-				<div class="col">
-					<p class="totalStyle totalHeading">Total:</p>
-					<p class="totalStyle totalVal">$ 0.00</p>
-				</div>
 			</div>
-
 		</section>
 	</main>
 
 	<footer class="wrapper">
-		<p>Created with ☕ by <a href="https://github.com/ismailkhanio">Ismail Khan</a></p>
-		<p>© Copyright 2020</p>
-		<p>Made @ Juno College</p>
+		<p>© 2020 <a href="https://github.com/ismailkhanio" target="_blank" rel="noopener noreferrer">Ismail Khan</a></p>
+		<p>Created at <a href="https://junocollege.com" target="_blank" rel="noopener noreferrer">Juno College</a></p>
 	</footer>
 
+	<!-- javascript -->
 	<script src="app.js"></script>
 </body>
 </html>
