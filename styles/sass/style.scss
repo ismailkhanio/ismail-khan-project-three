@@ -15,13 +15,26 @@
 
 body {
 	font-size: 62.5%;
-	background-color: $honeyDew;
+	background-color: $grey;
 }
 
 header, 
 main {
-	border-left: 1px solid $celadonBlue;
-	border-right: 1px solid $celadonBlue;
+	border-left: 2px solid $celadonBlue;
+	border-right: 2px solid $celadonBlue;
+	border-bottom: 2px solid $celadonBlue;
+	border-top: 2px solid $celadonBlue;
+
+	background-color: $honeyDew;
+}
+
+textarea,
+input {
+	// background-color: $powderBlue;
+
+	&:hover {
+		background-color: $grey;
+	}
 }
 
 // MAIN CSS
@@ -45,41 +58,56 @@ main {
 		display: flex;
 		flex-direction: column;
 		align-items: right;
-		margin-top: 30px;
+		margin-top: 25px;
 	}
 	
 	.flexContainerDetail {
 		display: flex;
 		justify-content: right;
-		margin-bottom: 10px;
+		align-items: center;
+		margin-bottom: 15px;
 	}
 	
 	.fieldInput {
-		width: 150px;
+		width: 130px;
+		height: 33px;
+		padding: 1px 3px;
 	}
 	
 	.fieldHeading {
 		margin-right: 10px;
 	}
 
+	// billing from and to textareas
 	.fieldText {
 		height: 150px;
 		width: 300px;
+		
 		margin: 7px 0;
+		padding: 5px 5px;
+		
 		resize: none;
 		overflow: none;
 	}
+
+	.requiredAsterisk {
+		color: $imperialRed;
+		font-size: 1.1rem;
+	}
+
 }
 
+// global field input options
 .fieldHeading,
 .fieldInput,
 .fieldText {
 	font-family: $baseFont;
-	font-size: 1.1rem;
+	font-size: 1rem;
 
 	-webkit-appearance: none;
 	-moz-appearance: textfield;
 }
+
 
 .billingFrom,
 .billingTo {
@@ -100,28 +128,31 @@ main {
 // table header
 .itemsTableHeader {
 	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 20px;
 
 	ul {
 		display: flex;
 		flex-direction: row;
-		justify-content: center;
+		justify-content: space-between;
 		padding-left: 0;
-		
-		
+		margin: 0;
+
 		li {
 			font-family: $baseFont;
 			font-size: 1.3rem;
 			list-style-type: none;
-			padding-left: none;
-			text-align: center;
+			padding-left: 15px;
 		}
 
 		.itemDescription {
-			width: 65%;
+			width: 60%;
+			text-align: center;
+
 		}
 
 		.dollarAmount {
-			width: 30%;
+			width: 27%;
 		}
 	}
 }
@@ -136,18 +167,39 @@ main {
 // default table row
 .dynamicRow {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	margin-bottom: 10px;
+
+	label {
+		display: none;
+	}
 
 	.inputRow {
 		height: 35px;
+
+		padding: 3px 7px;
+		margin-right: 15px;
+		margin-left: 4px;
 	}
 
 	.itemDescInput {
-		width: 65%;
+		width: 55%;
+		margin: 0 15px;
 	}
-	.amountVal {
-		width: 30%;
+	
+	.amountFlexContainer {
+		width: 29.2%;
+		display: flex;
+		align-items: center;
+
+		.currencySymbol {
+			margin: 0;
+			padding-left: 25px;
+		}
+
+		.amountVal {
+			width: 200px;
+		}
 	}
 }
 

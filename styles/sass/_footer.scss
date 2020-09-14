@@ -2,13 +2,23 @@
 @import 'colors';
 
 footer {
+  padding: 10px 0;
   text-align: center;
-  font-size: 1.3rem;
   font-family: $baseFont;
+  font-size: 1rem;
 
   a {
     text-decoration: none;
     color: inherit;
     font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.3rem;
+
+    &:nth-of-type(2) {
+      font-size: .8rem;
+    }
   }
 }

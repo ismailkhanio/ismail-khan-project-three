@@ -235,27 +235,56 @@ html {
   overflow: hidden;
 }
 
-header {
-  border-bottom: 1px solid #457B9D;
+header .flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 85%;
 }
 
-header .appTitle {
+header .flexContainer .appTitle {
   font-family: "IBM Plex Sans", sans-serif;
   color: #1D3557;
   font-size: 2.3rem;
-  margin: 0 20px;
+  padding: 0 20px;
+}
+
+header .flexContainer .tagline {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  text-align: left;
 }
 
 footer {
+  padding: 10px 0;
   text-align: center;
-  font-size: 1.3rem;
   font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
 }
 
 footer a {
   text-decoration: none;
   color: inherit;
   font-weight: 700;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.3rem;
+}
+
+footer p:nth-of-type(2) {
+  font-size: .8rem;
 }
 
 .wrapper {
@@ -266,13 +295,21 @@ footer a {
 
 body {
   font-size: 62.5%;
-  background-color: #F1FAEE;
+  background-color: #e2e2e2;
 }
 
 header,
 main {
-  border-left: 1px solid #457B9D;
-  border-right: 1px solid #457B9D;
+  border-left: 2px solid #457B9D;
+  border-right: 2px solid #457B9D;
+  border-bottom: 2px solid #457B9D;
+  border-top: 2px solid #457B9D;
+  background-color: #F1FAEE;
+}
+
+textarea:hover,
+input:hover {
+  background-color: #e2e2e2;
 }
 
 .invoiceDetails {
@@ -303,7 +340,7 @@ main {
   -webkit-box-align: right;
       -ms-flex-align: right;
           align-items: right;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .invoiceDetails .flexContainerDetail {
@@ -313,11 +350,16 @@ main {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
-  margin-bottom: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
 }
 
 .invoiceDetails .fieldInput {
-  width: 150px;
+  width: 130px;
+  height: 33px;
+  padding: 1px 3px;
 }
 
 .invoiceDetails .fieldHeading {
@@ -328,15 +370,21 @@ main {
   height: 150px;
   width: 300px;
   margin: 7px 0;
+  padding: 5px 5px;
   resize: none;
   overflow: none;
+}
+
+.invoiceDetails .requiredAsterisk {
+  color: #E63946;
+  font-size: 1.1rem;
 }
 
 .fieldHeading,
 .fieldInput,
 .fieldText {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
@@ -364,6 +412,8 @@ main {
 
 .itemsTableHeader {
   width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 .itemsTableHeader ul {
@@ -374,26 +424,27 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-left: 0;
+  margin: 0;
 }
 
 .itemsTableHeader ul li {
   font-family: "Open Sans", sans-serif;
   font-size: 1.3rem;
   list-style-type: none;
-  padding-left: none;
-  text-align: center;
+  padding-left: 15px;
 }
 
 .itemsTableHeader ul .itemDescription {
-  width: 65%;
+  width: 60%;
+  text-align: center;
 }
 
 .itemsTableHeader ul .dollarAmount {
-  width: 30%;
+  width: 27%;
 }
 
 .dynamicItemRow {
@@ -411,21 +462,45 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.dynamicRow label {
+  display: none;
 }
 
 .dynamicRow .inputRow {
   height: 35px;
+  padding: 3px 7px;
+  margin-right: 15px;
+  margin-left: 4px;
 }
 
 .dynamicRow .itemDescInput {
-  width: 65%;
+  width: 55%;
+  margin: 0 15px;
 }
 
-.dynamicRow .amountVal {
-  width: 30%;
+.dynamicRow .amountFlexContainer {
+  width: 29.2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dynamicRow .amountFlexContainer .currencySymbol {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.dynamicRow .amountFlexContainer .amountVal {
+  width: 200px;
 }
 
 .newLineBtn {

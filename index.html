@@ -14,7 +14,10 @@
 <body>
 	<!-- header -->
 	<header class="wrapper">
-		<h1 class="appTitle">EZ Invoice Generator</h1>
+		<div class="flexContainer">
+			<h1 class="appTitle">EZ Invoice Generator</h1>
+			<h2 class="tagline">Get paid quickly with fast invoicing!</h2>
+		</div>
 	</header>
 
 	<main class="wrapper">
@@ -23,29 +26,29 @@
 			<div class="leftCol">
 				<div class="billingAddress">
 					<div class="billingFrom">
-						<label class="fieldHeading" for="BillingFrom">Billing From:</label>
-						<textarea class="fieldText" name="billingFrom" id="" maxlength="210"></textarea>
+						<label class="fieldHeading" for="billingFrom">Billing From: <span class="requiredAsterisk">*</span></label>
+						<textarea class="fieldText" name="billingFrom" id="billingFrom" maxlength="210" spellcheck="false"></textarea>
 					</div>
 	
 					<div class="billingTo">
-						<label class="fieldHeading" for="BillingTo">Billing To:</label>
-						<textarea class="fieldText" name="billingTo" id="" maxlength="210"></textarea>
+						<label class="fieldHeading" for="billingTo">Billing To: <span class="requiredAsterisk">*</span></label>
+						<textarea class="fieldText" name="billingTo" id="billingTo" maxlength="210" spellcheck="false"></textarea>
 					</div>
 				</div>
 			</div>
 			<div class="rightCol">
 				<div class="invoiceIdentifiers">
 					<div class="flexContainerDetail">
-						<p class="fieldHeading">Invoice Number </p>
-						<input class="fieldInput" type="number" min="01" maxlength="11">
+						<label class="fieldHeading" for="invoiceNumber">Invoice Number <span class="requiredAsterisk">*</span> </label>
+						<input class="fieldInput" type="number" name="invoiceNumber" id="invoiceNumber" min="01" maxlength="11">
 					</div>
 					<div class="flexContainerDetail">
-						<p class="fieldHeading">Invoice Date </p>
-						<input type="date" class="fieldInput">
+						<label class="fieldHeading" for="invoiceDate">Invoice Date </label>
+						<input class="fieldInput" type="date" name="invoiceDate" id="invoiceDate">
 					</div>
 					<div class="flexContainerDetail">
-						<p class="fieldHeading">Due Date </p>
-						<input type="date" class="fieldInput">
+						<label class="fieldHeading" for="dueDate">Due Date </label>
+						<input class="fieldInput" type="date" name="dueDate" id="dueDate">
 					</div>
 				</div>
 			</div>
@@ -64,9 +67,14 @@
 			<div class="dynamicItemRow">
 				<div class="dynamicRow">
 					<!-- item description -->
-					<input type="text" class="fieldInput inputRow itemDescInput" maxlength="30">
+					<label for="itemInput"></label>
+					<input type="text" class="fieldInput inputRow itemDescInput" id="itemInput" name="itemInput" maxlength="30">
 					<!-- $ amount -->
-					<input type="number" class="fieldInput inputRow amountVal" name="amountValue" id="amountVal" min="0" maxlength="6">
+					<div class="amountFlexContainer">
+						<p class="currencySymbol fieldInput">$</p>
+						<label for="amountVal"></label>
+						<input type="number" class="fieldInput inputRow amountVal" id="amountVal" name="amountValue" min="0" maxlength="6">
+					</div>
 				</div>				
 			</div>
 
