@@ -40,11 +40,15 @@
 				<div class="invoiceIdentifiers">
 					<div class="flexContainerDetail">
 						<label class="fieldHeading" for="invoiceNumber">Invoice Number <span class="requiredAsterisk">*</span> </label>
-						<input class="fieldInput" type="number" name="invoiceNumber" id="invoiceNumber" min="01" maxlength="11">
+						<input class="fieldInput" type="text" name="invoiceNumber" id="invoiceNumber" pattern="\d*" maxlength="5">
+					</div>
+					<div class="flexContainerDetail">
+						<label class="fieldHeading" for="purchaseOrder">PO Number</label>
+						<input class="fieldInput" type="text" name="purchaseOrder" id="purchaseOrder" pattern="\d*" maxlength="5">
 					</div>
 					<div class="flexContainerDetail">
 						<label class="fieldHeading" for="invoiceDate">Invoice Date </label>
-						<input class="fieldInput" type="date" name="invoiceDate" id="invoiceDate">
+						<input class="fieldInput" type="date" name="invoiceDate" id="invoiceDate" placeholder=" ">
 					</div>
 					<div class="flexContainerDetail">
 						<label class="fieldHeading" for="dueDate">Due Date </label>
@@ -57,23 +61,32 @@
 		<!-- Line Items Table -->
 		<section class="invoiceTable">
 			<!-- table header -->
-			<div class="itemsTableHeader">
+			<!-- <div class="itemsTableHeader">
 				<ul>
 					<li class="itemDescription">Item Description</li>
 					<li class="dollarAmount">Amount ($)</li>
 				</ul>
-			</div>
+			</div> -->
 			<!-- dynamic table rows -->
 			<div class="dynamicItemRow">
+				<div class="itemsTableHeader">
+					<ul>
+						<li class="itemDescription">Item Description</li>
+						<li class="dollarAmount">Amount ($)</li>
+					</ul>
+				</div>
+
 				<div class="dynamicRow">
 					<!-- item description -->
-					<label for="itemInput"></label>
-					<input type="text" class="fieldInput inputRow itemDescInput" id="itemInput" name="itemInput" maxlength="30">
+					<div class="inputFlexContainer">
+						<label for="itemInput" class="itemLabel">Item</label>
+						<input type="text" class="fieldInput inputRow itemDescInput" id="itemInput" name="itemInput" maxlength="38" placeholder="Enter item description here...">
+					</div>
 					<!-- $ amount -->
 					<div class="amountFlexContainer">
+						<label for="amountVal">Amount</label>
 						<p class="currencySymbol fieldInput">$</p>
-						<label for="amountVal"></label>
-						<input type="number" class="fieldInput inputRow amountVal" id="amountVal" name="amountValue" min="0" maxlength="6">
+						<input type="number" class="fieldInput inputRow amountVal" id="amountVal" name="amountValue" min="0" max="999999">
 					</div>
 				</div>				
 			</div>

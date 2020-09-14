@@ -24,3 +24,23 @@ header {
 		}
 	}
 }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 940px) {
+	header {
+		.flexContainer {
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+
+			.appTitle {
+				margin-bottom: 15px;
+			}
+
+			.tagline {
+				margin-top: 0;
+				font-size: .9rem;
+			}
+		}
+	}
+}
