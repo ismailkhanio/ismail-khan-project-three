@@ -21,17 +21,16 @@ body {
 
 header, 
 main {
-	border-left: 2px solid $celadonBlue;
-	border-right: 2px solid $celadonBlue;
-	border-bottom: 2px solid $celadonBlue;
-	border-top: 2px solid $celadonBlue;
-
+	border: 5px solid $celadonBlue;
 	background-color: $honeyDew;
+}
+
+header {
+	border-bottom: none;
 }
 
 textarea,
 input {
-	// background-color: $powderBlue;
 
 	&:hover {
 		background-color: $grey;
@@ -39,7 +38,6 @@ input {
 }
 
 // MAIN CSS
-
 // SECTION: INVOICE DETAILS
 .invoiceDetails {
 	padding: 50px 0;
@@ -74,7 +72,7 @@ input {
 	}
 	
 	.fieldInput {
-		width: 130px;
+		width: 140px;
 		height: 33px;
 		padding: 1px 3px;
 	}
@@ -258,7 +256,6 @@ input {
 .flexContainerTotals {
 	display: flex;
 	flex-direction: column;
-	border: 1px dashed black; //remove this later
 	width: 35%;
 
 	.col {
@@ -407,6 +404,10 @@ input {
 	.totalStyle {
 		font-size: 1.2rem;
 	}
+
+	.flexContainerTotals {
+		width: 48%;
+	}
 }
 
 /* Landscape phones and down */
@@ -419,6 +420,21 @@ input {
 		.billingFrom,
 		.billingTo {
 			width: 67%;
+		}
+
+		.fieldInput {
+			width: 50%;
+		}
+
+		.flexContainerDetail {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.invoiceIdentifiers {
+			.fieldHeading {
+				margin-bottom: 10px;
+			}
 		}
 	}
 	
@@ -450,10 +466,15 @@ input {
 			padding-top: 12px;
 		}
 	}
+
+	.flexContainerTotals {
+		width: 80%;
+		margin-left: 30px;
+	}
 }
 
 /* Landscape phones and down */
-@media (max-width: 330px) {
+@media (max-width: 332px) {
 
 	// invoiceDetails
 	.invoiceDetails {
@@ -472,10 +493,5 @@ input {
 			width: 90%;
 			overflow: auto;
 		}
-	}
-
-	.flexContainerTotals {
-		width: 55%;
-		margin-left: 30px;
 	}
 }

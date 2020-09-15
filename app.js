@@ -1,12 +1,17 @@
-
 // app object
 const app = {};
+
+// global variables
+let hstRate = 1.13
+let rowPrice = 0;
 
 // on click of new line button, display new table row 
 app.addLine = function () {
   $('#addRow').click(function(e){
+    // prevent refresh from going to the top of the page
     e.preventDefault();
 
+    // append dynamic HTML on button click
     $('.dynamicItemRow').append (
       ` <div class="dynamicRow">
 					<div class="inputFlexContainer">
@@ -17,11 +22,13 @@ app.addLine = function () {
 					<div class="amountFlexContainer">
 						<label for="amountVal">Amount</label>
 						<p class="currencySymbol fieldInput">$</p>
-						<input type="number" class="fieldInput inputRow amountVal" id="amountVal" name="amountValue" min="0" max="999999">
+						<input type="tel" class="fieldInput inputRow amountVal" id="amountVal" name="amountValue" min="0" maxlength="7" autocomplete=off>
 					</div>
 				</div>
       `
     )
+
+    // call rowPrice function
     app.rowPrice();
   });
 }
@@ -29,31 +36,41 @@ app.addLine = function () {
 // on input of number in amountVal, total that sum in subtotalVal 
 app.rowPrice = function () {
   $('.dynamicRow').on('blur', '.amountVal', function() {
-    let rowPrice = 0
     $('.amountVal').each(function(){
       let inputVal = $(this).val();
       if ($.isNumeric(inputVal)){
         rowPrice += parseFloat(inputVal);
       }
     });
+    
     $('.subtotalVal').text(`$ ${rowPrice}`);
-  })
+    
+    // call after tax calculation, and display in total
+    app.afterTax();
+  });
 }
 
 // limit number character input
 app.numLimit = function () {
-  $('.amountVal').oninput(function() {
-    if (this.value.length > 5) {
-      this.value = this.value.slice(0,4);
-    }
+  $('.amountVal').on('change keyup', function() {
+    // use regex to take each amount value input and remove text characters
+    let limit = $(this).val().replace(/[^0-9]/g, '');
+    $(this).val(limit);
   });
 }
-// app.numLimit();
+
+// create total after tax 
+app.afterTax = function () {
+  // take value from total, make into a number, and multiple with tax rate of 13%
+  let taxTotal = rowPrice * hstRate;
+  $('.grandTotalVal').text(`$ ${taxTotal.toFixed(2)}`);
+}
+
 // initialize app
 app.init = function() {
-  console.log("app initialized!");
   app.rowPrice();
   app.addLine();
+  app.numLimit();
 }
 
 // document ready

@@ -60,15 +60,9 @@
 		
 		<!-- Line Items Table -->
 		<section class="invoiceTable">
-			<!-- table header -->
-			<!-- <div class="itemsTableHeader">
-				<ul>
-					<li class="itemDescription">Item Description</li>
-					<li class="dollarAmount">Amount ($)</li>
-				</ul>
-			</div> -->
 			<!-- dynamic table rows -->
 			<div class="dynamicItemRow">
+				<!-- table header -->
 				<div class="itemsTableHeader">
 					<ul>
 						<li class="itemDescription">Item Description</li>
@@ -80,19 +74,18 @@
 					<!-- item description -->
 					<div class="inputFlexContainer">
 						<label for="itemInput" class="itemLabel">Item</label>
-						<input type="text" class="fieldInput inputRow itemDescInput" id="itemInput" name="itemInput" maxlength="38" placeholder="Enter item description here...">
+						<input type="text" class="fieldInput inputRow itemDescInput" id="itemInput" name="itemInput" maxlength="45" placeholder="Enter item description here...">
 					</div>
 					<!-- $ amount -->
 					<div class="amountFlexContainer">
 						<label for="amountVal">Amount</label>
 						<p class="currencySymbol fieldInput">$</p>
-						<input type="number" class="fieldInput inputRow amountVal" id="amountVal" name="amountValue" min="0" max="999999">
+						<input type="tel" class="fieldInput inputRow amountVal" id="amountVal" name="amountValue" min="0" maxlength="7" autocomplete=off>
 					</div>
 				</div>				
 			</div>
 
 			<!-- add new line button -->
-				<!-- on click create a new line item row -->
 			<a href="#" class="newLineBtn" id="addRow">+ New Item</a>
 			
 		</section>
@@ -101,9 +94,16 @@
 		<section class="totalDetails">
 			<div class="flexContainerTotals">
 				<div class="col">
-					<p class="totalStyle subtotalHeading">Total</p>
+					<p class="totalStyle subtotalHeading">Subtotal</p>
 					<p class="totalStyle subtotalVal">$ 0.00</p>
-					<!-- this value will aggregate all the dollar amounts in .dynamicTableRow -->
+				</div>
+				<div class="col">
+					<p class="totalStyle hstRate">Tax Rate</p>
+					<p class="totalStyle hstRate">13%</p>
+				</div>
+				<div class="col">
+					<p class="totalStyle grandTotal">Total</p>
+					<p class="totalStyle grandTotalVal">$ 0.00</p>
 				</div>
 			</div>
 		</section>

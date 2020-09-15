@@ -2,7 +2,6 @@
 @import 'colors';
 
 header {
-
 	.flexContainer {
 		display: flex;
 		flex-direction: row;
@@ -35,11 +34,22 @@ header {
 
 			.appTitle {
 				margin-bottom: 15px;
+				text-align: center;
 			}
 
 			.tagline {
 				margin-top: 0;
 				font-size: .9rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 332px) {
+	header {
+		.flexContainer {
+			.tagline {
+				font-size: .8rem;
 			}
 		}
 	}

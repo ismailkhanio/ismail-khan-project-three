@@ -279,10 +279,17 @@ header .flexContainer .tagline {
   }
   header .flexContainer .appTitle {
     margin-bottom: 15px;
+    text-align: center;
   }
   header .flexContainer .tagline {
     margin-top: 0;
     font-size: .9rem;
+  }
+}
+
+@media (max-width: 332px) {
+  header .flexContainer .tagline {
+    font-size: .8rem;
   }
 }
 
@@ -322,11 +329,12 @@ body {
 
 header,
 main {
-  border-left: 2px solid #457B9D;
-  border-right: 2px solid #457B9D;
-  border-bottom: 2px solid #457B9D;
-  border-top: 2px solid #457B9D;
-  background-color: #F1FAEE;
+  border: 5px solid #457B9D;
+  background-color: #FCF7FF;
+}
+
+header {
+  border-bottom: none;
 }
 
 textarea:hover,
@@ -383,7 +391,7 @@ input:hover {
 }
 
 .invoiceDetails .fieldInput {
-  width: 130px;
+  width: 140px;
   height: 33px;
   padding: 1px 3px;
 }
@@ -540,14 +548,14 @@ input:hover {
   margin-left: 13px;
   margin-top: 10px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 2px 0px 0px #F1FAEE;
-          box-shadow: 0px 2px 0px 0px #F1FAEE;
+  -webkit-box-shadow: 0px 2px 0px 0px #FCF7FF;
+          box-shadow: 0px 2px 0px 0px #FCF7FF;
   border: 1px solid #457B9D;
   border-radius: 7px;
   text-decoration: none;
   text-shadow: 0px -1px 0px #1D3557;
   background-color: #457B9D;
-  color: #F1FAEE;
+  color: #FCF7FF;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -589,7 +597,6 @@ input:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px dashed black;
   width: 35%;
 }
 
@@ -717,6 +724,9 @@ input:hover {
   .totalStyle {
     font-size: 1.2rem;
   }
+  .flexContainerTotals {
+    width: 48%;
+  }
 }
 
 /* Landscape phones and down */
@@ -727,6 +737,21 @@ input:hover {
   .invoiceDetails .billingFrom,
   .invoiceDetails .billingTo {
     width: 67%;
+  }
+  .invoiceDetails .fieldInput {
+    width: 50%;
+  }
+  .invoiceDetails .flexContainerDetail {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .invoiceDetails .invoiceIdentifiers .fieldHeading {
+    margin-bottom: 10px;
   }
   .itemsTableHeader {
     display: none;
@@ -754,10 +779,14 @@ input:hover {
   .dynamicRow .amountFlexContainer {
     padding-top: 12px;
   }
+  .flexContainerTotals {
+    width: 80%;
+    margin-left: 30px;
+  }
 }
 
 /* Landscape phones and down */
-@media (max-width: 330px) {
+@media (max-width: 332px) {
   .invoiceDetails .rightCol,
   .invoiceDetails .billingFrom,
   .invoiceDetails .billingTo {
@@ -769,9 +798,5 @@ input:hover {
   .dynamicRow .itemDescInput {
     width: 90%;
     overflow: auto;
-  }
-  .flexContainerTotals {
-    width: 55%;
-    margin-left: 30px;
   }
 }
