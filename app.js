@@ -18,7 +18,6 @@ app.addLine = function () {
 						<label for="itemInput" class="itemLabel">Item</label>
 						<input type="text" class="fieldInput inputRow itemDescInput" id="itemInput" name="itemInput" maxlength="38" placeholder="Enter item description here...">
 					</div>
-					<!-- $ amount -->
 					<div class="amountFlexContainer">
 						<label for="amountVal">Amount</label>
 						<p class="currencySymbol fieldInput">$</p>
@@ -35,8 +34,9 @@ app.addLine = function () {
 
 // on input of number in amountVal, total that sum in subtotalVal 
 app.rowPrice = function () {
-  $('.dynamicRow').on('blur', '.amountVal', function() {
+  $('.dynamicRow').on('change', '.amountVal', function() {
     $('.amountVal').each(function(){
+      app.numLimit();
       let inputVal = $(this).val();
       if ($.isNumeric(inputVal)){
         rowPrice += parseFloat(inputVal);
@@ -44,7 +44,7 @@ app.rowPrice = function () {
     });
     
     $('.subtotalVal').text(`$ ${rowPrice}`);
-    
+
     // call after tax calculation, and display in total
     app.afterTax();
   });
@@ -68,7 +68,6 @@ app.afterTax = function () {
 
 // initialize app
 app.init = function() {
-  app.rowPrice();
   app.addLine();
   app.numLimit();
 }
